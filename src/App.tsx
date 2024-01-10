@@ -11,32 +11,28 @@
 
 import React from 'react'
 import { useState } from 'react';
-import {Routes,Route , Link  } from 'react-router-dom'
-import { Layout , Typography , Space } from 'antd';
+import {Routes,Route  } from 'react-router-dom'
 
-import Navbar from './Components/Navbar/Navbar';
+
+import { Data } from "./Components/Utility/Data/Data.js"
 import {Registration} from "./Components/Pages/Registraton/Registation.tsx"
 import Login  from './Components/Pages/Login/Login.tsx';
+import Main from './Components/Pages/DataInputPage/Main/Main.tsx';
 
 const App = () => {
-  const [users , setUsers] =  useState([{
-      id:0,
-      username:"",
-      email:'',
-      password:"",
-  },
-])
+  const [users , setUsers] =  useState(Data)
   const handleAddUser=(user)=>{
       setUsers(prev=>[...prev , user]);
   }
 
 
+
   return (
     <div className='app'>
         <Routes>
-        <Route path='/' element={(<h1 className='text-center text-[90px]'> std::cout&#60;&#60;"Hello World";</h1>)}/>
+        <Route path='/' element={<Main/>}/>
         <Route  path='/registration' element={<Registration handleAddUser={handleAddUser}/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/login' element={<Login users={users}/>}/>
         </Routes>
     </div>
   );

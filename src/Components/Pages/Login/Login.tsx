@@ -13,7 +13,7 @@ type Inputs={
     password:string
 }
 
-const Login = () => {
+const Login = ({users}) => {
 
 // does nothing yet
 useEffect(
@@ -23,24 +23,48 @@ useEffect(
  //has bug , because localStorage item is not same as data.email   
  // i will fix it later
  const onSumbit=(data:Inputs)=>{
-      const info =  localStorage.getItem("userInfo");
 
-      if
-      (
-        data.email == localStorage.getItem("userInfo")?.split(',')[1].split(":")[1] 
-        &&
-        data.password == localStorage.getItem("userInfo")?.split(',')[3].split(":")[1]
-      )
-      {
-        redirect("/")
+        users.map((user)=>
+        {
+        console.log(user.email === data.email && user.password === data.password)
+          if(user.email === data.email && user.password === data.password){
+
+            redirect("/");
+            return 0;
+          
+          }
+        }
+          )             
+        return (<></>);
+
+  
       }
-      
-    }
+    
     
     const redirect = useNavigate();
 
-    const Login = ['L','o','g','i','n']
-    
+    const Login = [
+                  {
+                    id:0,
+                    value:'L',
+                  },
+                  {
+                    id:1,
+                    value:'o',
+                  },
+                  {
+                    id:2,
+                    value:'g',
+                  },
+                  {
+                    id:3,
+                    value:'i',
+                  }, 
+                  {
+                    id:4,
+                    value:'n',
+                  },             ]
+
     const {register , handleSubmit  , formState , getValues} = useForm<Inputs>( {defaultValues:{
         email:'',
         password:'',
@@ -49,7 +73,7 @@ useEffect(
 return (
     <div className=" flex justify-center w-full h-[100vh] items-center ">
       <div className=" relative w-1/3 box-border border-0 mt-10  p-4 shadow-mShadow  rounded-lg ">
-       <h1 className="text-center flex text-[40px] justify-center items-center font-bold w-full" >{Login.map(character=>(<span className="hover:text-green-300 cursor-pointer">{character}</span>))}</h1>
+       <h1 className="text-center flex text-[40px] justify-center items-center font-bold w-full" >{Login.map((character, index)=>(<span key={character.id} className="hover:text-green-300 cursor-pointer">{character.value}</span>))}</h1>
         <form className="justify-center h-full" onSubmit={handleSubmit(onSumbit)} noValidate>
                                                                  {/* Email input */}
             <input className="border-2 focus:shadow-inputShadow mr-auto ml-auto  text-center rounded-lg block w-3/4  mt-6  border-cyan-400 border-solid p-2 "
