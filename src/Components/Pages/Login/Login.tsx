@@ -28,7 +28,12 @@ useEffect(
         {
         console.log(user.email === data.email && user.password === data.password)
           if(user.email === data.email && user.password === data.password){
-
+            if(user.status=="user"){
+              localStorage.setItem("user",JSON.stringify(data));
+            }
+            else{
+              localStorage.setItem('user', JSON.stringify({data, status:true}))
+            }
             redirect("/");
             return 0;
           

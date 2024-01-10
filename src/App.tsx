@@ -28,7 +28,7 @@ const App = () => {
 
 
   return (
-    <div className='app'>
+    <div className='app '>
         <Routes>
         <Route path='/' element={<Main/>}/>
         <Route  path='/registration' element={<Registration handleAddUser={handleAddUser}/>}/>

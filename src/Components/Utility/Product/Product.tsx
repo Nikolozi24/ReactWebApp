@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Product = ({product}) => {
+const Product = ({product ,  handleDelete}) => {
         const{id , title , image , category , price , description} = product;
   return (
     <div className='grid  grid-cols-2 w-full h-full justify-center items-center '>
@@ -13,8 +13,10 @@ const Product = ({product}) => {
         <span className='w-full'><span className='font-bold'>Category:</span> {category}</span>
         <span><span className='font-bold'>Price:</span> {price}</span> 
       </div>
-     
-      
+        {
+
+          localStorage.getItem("user")?.split(",")[2]&& <button className='border-2 bg-red-600' onClick={(id)=>handleDelete(product.id)}>Delete Product</button>
+        }
     </div>
     
   )
