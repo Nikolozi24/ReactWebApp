@@ -1,25 +1,24 @@
 export const Data=[
     {
         id:1,
-        fullName:"nikoloz tchiabrishvili",
-        email:'niko.chiabrishvili12@mail.ru',
-        password:'12345678'   ,
+        fullName:"nikExample ishvili",
+        email:'niEo.Example2@mail.ru',
+        password:'1ExampleExample78'   ,
         status:'admin',
 
     },
     {
         id:2,
-        fullName:'qristine Omiadze',
-        email:'qristine.Omiadze21@gmail.com',
-        password:'qristiqristi123',
+        fullName:'Example Examplee',
+        email:'QxampleExamplle@gmail.com',
+        password:'qrEaqeti123',
         status:'user',
 
     },
     {
         id:3,
-        fullName:'nana burdzenidze',
-        email:"nana.burdzenidze321@mail.com",
-        password:"nanaBurdzenidze123",
+        email:"nExa.buExample321@mail.com",
+        password:"naEadzeEaqere123",
         status:'user',
 
     },
