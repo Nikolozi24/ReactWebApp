@@ -9,7 +9,7 @@ export const Data=[
     },
     {
         id:2,
-        fullName:'Example Examplee',
+        fullName:'Example Examp',
         email:'QxampleExamplle@gmail.com',
         password:'qrEaqeti123',
         status:'user',
