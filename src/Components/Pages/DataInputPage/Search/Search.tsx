@@ -62,8 +62,8 @@ function Search() {
                        
                             {  
                             Productdata.map( (product)=>(
-                                    <div className=" p-2 m-2 border-2 border-solid border-cyan-800 rounded-lg cursor-pointer hover:bg-cyan-300 "key={product.id}><Link to="/"><Product handleDelete={handleDelete}product={product} /></Link></div>
-
+                                  <div className=" p-2 m-2 border-2 border-solid border-cyan-800 rounded-lg cursor-pointer hover:bg-cyan-300 "key={product.id}><Link to={`/${product.id}`}><Product handleDelete={handleDelete}product={product} /></Link></div>
+                                   
                             )
 
 

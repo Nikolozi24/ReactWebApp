@@ -18,7 +18,7 @@ import { Data } from "./Components/Utility/Data/Data.js"
 import {Registration} from "./Components/Pages/Registraton/Registation.tsx"
 import Login  from './Components/Pages/Login/Login.tsx';
 import Main from './Components/Pages/DataInputPage/Main/Main.tsx';
-
+import ProductItem  from './Components/Pages/ProductItem/ProductItem.tsx';
 const App = () => {
   const [users , setUsers] =  useState(Data)
   const handleAddUser=(user)=>{
@@ -33,6 +33,7 @@ const App = () => {
         <Route path='/' element={<Main/>}/>
         <Route  path='/registration' element={<Registration handleAddUser={handleAddUser}/>}/>
         <Route path='/login' element={<Login users={users}/>}/>
+        <Route path ="/:productId" element={<ProductItem/>}/>
         </Routes>
     </div>
   );

@@ -15,7 +15,7 @@ const Product = ({product ,  handleDelete}) => {
       </div>
         {
 
-          localStorage.getItem("user")?.split(",")[2]&& <button className='border-2 bg-red-600' onClick={(id)=>handleDelete(product.id)}>Delete Product</button>
+          localStorage.getItem("user")?.split(",")[2]&& <button className=' relative z-20 border-2 bg-red-600' onClick={(id)=>handleDelete(product.id)}>Delete Product</button>
         }
     </div>
     
